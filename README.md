@@ -5,21 +5,21 @@ classDiagram
         +aparelhoTelefonico: AparelhoTelefonico
         +navegadorInternet: NavegadorInternet
     }
-    interface ReprodutorMusical {
+    class ReprodutorMusical {
         +tocar()
         +pausar()
         +selecionarMusica(String musica)
     }
-    interface AparelhoTelefonico {
+    class AparelhoTelefonico {
         +ligar(String numero)
         +atender()
         +iniciarCorreioVoz()
     }
-    interface NavegadorInternet {
+    class NavegadorInternet {
         +exibirPagina(String url)
         +adicionarNovaAba()
         +atualizarPagina()
     }
-    iPhone ..> ReprodutorMusical
-    iPhone ..> AparelhoTelefonico
-    iPhone ..> NavegadorInternet
+    iPhone implements ReprodutorMusical
+    iPhone implements AparelhoTelefonico
+    iPhone implements NavegadorInternet
